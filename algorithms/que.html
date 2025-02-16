@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class QueLists{
+            constructor(keyV){
+                this.keyV = keyV;
+                this.quelist = [];
+            }
+            // 큐에 요소 추가
+            listAdd(item){
+                this.quelist.push(item);
+            }
+            // 큐에서 요소 리턴
+            listReturn(){
+                if( this.quelist.length === 0 ){
+                    throw new Error('queue is empty');
+                }
+                return this.quelist.shift();
+            }
+            //list가 비어있는지 체크
+            listEmpty(){
+                return this.quelist.length === 0 ? true : false;
+            }
+            //다음 요소 확인
+            listNextView(){
+                return this.quelist.length === 0 ? null : this.quelist[0];
+            }
+        }
+
+        const queTest = new QueLists("test");
+        for(let i = 0; i < 2; i++){
+            queTest.listAdd(i);
+        }
+        console.log(queTest.listReturn());
+        console.log(queTest.listEmpty());
+        console.log(queTest.listNextView());
+        console.log(queTest.listReturn());
+        console.log(queTest.listEmpty());
+        console.log(queTest.listNextView());//비어있기 때문에 null생성
+
+    </script>
+</body>
+</html>
