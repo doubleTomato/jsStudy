@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+<style>
+
+.swiper-container{
+    width: 100px;
+}
+.swiper-wrapper{ border: 1px solid #ccc;}
+</style>
+</head>     
+<body>
+    <div class="swiper-container">
+        <ul class="swiper-wrapper">
+            <li class="swiper-slide">
+                <p type="button" onclick="popupLoad('집!')">팝업</p>
+                <p type="button" onclick="location.href='https://www.google.com/'">링크</p>
+            </li>
+            <li class="swiper-slide">2</li>
+            <li class="swiper-slide">3</li>
+            <li class="swiper-slide">4</li>
+            <li class="swiper-slide">5</li>
+        </ul>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@6/swiper-bundle.min.js"></script>
+    <script>
+        const mySwiper = new Swiper('.swiper-container', {
+            loop: true
+        });
+        function popupLoad(a){
+            alert(a);
+        }
+    </script>
+</body>
+
+</html>
